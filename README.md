@@ -1,4 +1,4 @@
-# Mestre dos Códigos - Trilha C#
+# Mestre dos Códigos - Trilha C# - Escudeiro
 
 Perguntas teóricas de introdução
 
