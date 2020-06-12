@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Questao4POO
 {
-    class Televisao
+    public class Televisao
     {
         private int _volume;
         private int _numeroCanal;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Questao4POO
 {
-    class Canal
+    public class Canal
     {
         /*private int _numero;
         private string _nome;
