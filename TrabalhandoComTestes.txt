@@ -1,0 +1,13 @@
+1 - Quais os principais frameworks que podemos usar no desenvolvimento de testes?
+
+MSTest: Framework padrão do Visual Studio.
+
+NUnit: Framework mais utilizado entre os Devs .NET.
+
+XUnit: Framework mais recente, nascido para simplificar e modernizar a forma de escrever testes unitários.
+
+Página com comparações entre esses 3 tipos:
+https://xunit.github.io/docs/comparisons.html
+
+Referências:
+https://www.eduardopires.net.br/2017/07/ferramentas-para-escrever-testes-de-unidade-mais-eficientes/
