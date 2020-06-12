@@ -6,7 +6,7 @@ namespace Questao4POO
 {
     class Canal
     {
-        private int _numero;
+        /*private int _numero;
         private string _nome;
 
         public int Numero
@@ -19,7 +19,10 @@ namespace Questao4POO
         {
             get { return _nome; }
             set { _nome = value; }
-        }
+        }*/
+
+        public int Numero { get; set; }
+        public string Nome { get; set; }
 
         public Canal (int numero, string nome)
         {

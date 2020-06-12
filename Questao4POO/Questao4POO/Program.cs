@@ -51,12 +51,10 @@ namespace Questao4POO
                     ExibirOpcoes();
                     break;
                 case "3":
-                    ;
                     Console.WriteLine("{0}", controleRemoto.AumentarNumeroCanal());
                     ExibirOpcoes();
                     break;
                 case "4":
-                    controleRemoto.DiminuirVolume();
                     Console.WriteLine("{0}", controleRemoto.DiminuirNumeroCanal());
                     ExibirOpcoes();
                     break;

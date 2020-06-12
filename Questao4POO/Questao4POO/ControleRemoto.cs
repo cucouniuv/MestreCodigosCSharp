@@ -6,7 +6,7 @@ namespace Questao4POO
 {
     class ControleRemoto
     {
-        private Televisao _televisaoSincronizada;
+        private readonly Televisao _televisaoSincronizada;
 
         public ControleRemoto(Televisao televisao)
         {
