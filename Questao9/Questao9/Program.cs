@@ -58,31 +58,43 @@ namespace Questao9
             //Insira um numero no final da lista.
             Console.WriteLine("Insira um numero no final da lista.");
             var finalLista = listaInteiros;
-
-            //finalLista.Last
-
-            //finalLista.Insert(finalLista.Last(), 88);
-
-            finalLista.Reverse();
-            finalLista.Insert(0, 88);
-            finalLista.Reverse();
-
+            finalLista.Add(88);
             finalLista.ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Remova o primeiro número .
+            //Remova o primeiro número.
             Console.WriteLine("Remova o primeiro número.");
-            var removaPrimeiro = listaInteiros;
-            removaPrimeiro.RemoveAt(removaPrimeiro.IndexOf(removaPrimeiro.First()));
-
+            var removaPrimeiro = listaInteiros.Skip(1).ToList();
             removaPrimeiro.ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Remova o ultimo número .
-            // =========================== FAZER =============================
-            //Console.WriteLine("Insira um numero no inicio da lista.");
+            //Remova o ultimo número.
+            Console.WriteLine("Remova o último número.");
+            var removaUltimo = listaInteiros.Take(listaInteiros.Count() - 1).ToList();
+            removaUltimo.ForEach(x => { Console.WriteLine(x.ToString()); });
 
             //Retorne apenas os número pares.
+            Console.WriteLine("Retorne apenas os número pares.");
+            var numerosPares =
+                (from valor in listaInteiros
+                where (valor % 2) == 0
+                select valor);
+            numerosPares.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
+
             //Retorne apenas o número informado.
+            Console.WriteLine("Retorne apenas o número informado.");
+            int numeroInformado = 20;
+            var listaNumeroInformado =
+                (from valor in listaInteiros
+                 where valor == numeroInformado
+                 select valor);
+            listaNumeroInformado.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
+
             //Transforme todos os números da lista em um array.
+            Console.WriteLine("Transforme todos os números da lista em um array.");
+            foreach (int valor in listaInteiros.ToArray())
+            {
+                Console.WriteLine(valor);
+            }
+
         }
     }
 }
