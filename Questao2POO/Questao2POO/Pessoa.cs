@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Questao2POO
 {
-    class Pessoa
+    public class Pessoa
     {
         private string _nome;
         private DateTime _dataNascimento;
