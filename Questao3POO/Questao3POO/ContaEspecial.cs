@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Questao3POO
 {
-    class ContaEspecial : ContaBancaria, IImprimivel
+    public class ContaEspecial : ContaBancaria, IImprimivel
     {
         private double _limite;
 

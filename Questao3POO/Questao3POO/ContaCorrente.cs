@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Questao3POO
 {
-    class ContaCorrente : ContaBancaria, IImprimivel
+    public class ContaCorrente : ContaBancaria, IImprimivel
     {
         private double _taxaOperacao;
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Questao3POO
 {
-    abstract class ContaBancaria
+    abstract public class ContaBancaria
     {
         private int _numeroConta;
         private double _saldo;
