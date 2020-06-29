@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Questao1POO
 {
-    class Peixe : Animal
+    public class Peixe : Animal
     {
         public override void Mover()
         {

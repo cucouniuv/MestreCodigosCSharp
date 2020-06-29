@@ -17,17 +17,17 @@ namespace Questao1POO
             Console.WriteLine(String.Format("Animais instruídos a se mover: {0}, {1}, {2}", 
                 humano.AcaoRealizada, peixe.AcaoRealizada, cachorro.AcaoRealizada));
 
-            Cachorro cachorroLegal = new Cachorro();
+            Cachorro cachorroComHumor = new Cachorro();
 
-            ((IHumorBom)cachorroLegal).ExecutarAlgo();
+            ((IHumorBom)cachorroComHumor).ExecutarAlgo();
 
             Console.WriteLine(String.Format("O cachorro estava com humor bom e {0}", 
-                cachorroLegal.AcaoRealizada));
+                cachorroComHumor.AcaoRealizada));
 
-            ((IHumorRuim)cachorroLegal).ExecutarAlgo();
+            ((IHumorRuim)cachorroComHumor).ExecutarAlgo();
 
             Console.WriteLine(String.Format("O cachorro estava com humor ruim e {0}",
-                cachorroLegal.AcaoRealizada));
+                cachorroComHumor.AcaoRealizada));
         }
     }
 }
