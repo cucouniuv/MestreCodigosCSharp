@@ -9,20 +9,25 @@ namespace Questao2
         {
             Console.WriteLine("Crie uma aplicação que receba nome e salario de N funcionários. Utilize a repetição for e while.");
 
-            List<Funcionario> lista = new List<Funcionario>();
+            List<Funcionario> listaFuncionario = new List<Funcionario>();
 
             while (true)
             {
-                Console.WriteLine("Digite o nome do funcionário ou digite Parar:");
-                string nome = Console.ReadLine();
-                if (nome == "Parar")
-                {
-                    break;
-                }
-                Console.WriteLine("Digite o salário:");
-                double salario = double.Parse(Console.ReadLine());
+                const string frase = "Digite o nome do funcionário ou digite exatamente: Parar";
+                Console.WriteLine(frase);
+                string nome;
+                while ((nome = Console.ReadLine()).Length == 0)
+                    Console.WriteLine(frase);
 
-                lista.Add(new Funcionario(nome, salario));
+                if (nome == "Parar")
+                    break;
+
+                double salario;
+                Console.WriteLine("Digite o salário:");
+                while (!(double.TryParse(Console.ReadLine(), out salario)))
+                    Console.WriteLine("Digite o salário:");
+
+                listaFuncionario.Add(new Funcionario(nome, salario));
             }
 
             int i;
@@ -32,24 +37,24 @@ namespace Questao2
             string nomeMaiorSalario = "";
             string nomeMenorSalario = "";
 
-            for (i = 0; i < lista.Count; i++)
+            for (i = 0; i < listaFuncionario.Count; i++)
             {
-                if (maiorSalario < lista[i].Salario)
+                if (maiorSalario < listaFuncionario[i].Salario)
                 {
-                    maiorSalario = lista[i].Salario;
-                    nomeMaiorSalario = lista[i].Nome;
+                    maiorSalario = listaFuncionario[i].Salario;
+                    nomeMaiorSalario = listaFuncionario[i].Nome;
                 }
 
                 if (menorSalario == 0)
                 {
-                    menorSalario = lista[i].Salario;
-                    nomeMenorSalario = lista[i].Nome;
+                    menorSalario = listaFuncionario[i].Salario;
+                    nomeMenorSalario = listaFuncionario[i].Nome;
                 }
 
-                if (menorSalario > lista[i].Salario)
+                if (menorSalario > listaFuncionario[i].Salario)
                 {
-                    menorSalario = lista[i].Salario;
-                    nomeMenorSalario = lista[i].Nome;
+                    menorSalario = listaFuncionario[i].Salario;
+                    nomeMenorSalario = listaFuncionario[i].Nome;
                 }
             }
 

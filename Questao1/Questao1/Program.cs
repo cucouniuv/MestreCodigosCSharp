@@ -26,9 +26,12 @@ namespace Questao1
         private static void ReceberValores(out double nValorA, out double nValorB)
         {
             Console.WriteLine("Digite o valor de A:");
-            nValorA = Double.Parse(Console.ReadLine());
+            while (!(Double.TryParse(Console.ReadLine(), out nValorA)))
+                Console.WriteLine("Digite o valor de A:");
+
             Console.WriteLine("Digite o valor de B:");
-            nValorB = Double.Parse(Console.ReadLine());
+            while (!(Double.TryParse(Console.ReadLine(), out nValorB)))
+                Console.WriteLine("Digite o valor de B:");
         }
 
         private static void ProcessarValores(double nValorA, double nValorB)
