@@ -6,28 +6,29 @@ namespace Questao6
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("==============================================================");
             Console.WriteLine("Crie uma aplicação, que demonstre a diferença entre REF e OUT.");
+            Console.WriteLine("==============================================================");
 
-            Console.WriteLine("Informe um valor inteiro de entrada para o parâmetro:");
-            //int x = int.Parse(Console.ReadLine());
             int x = 5;
             int y = 5;
 
             // Necessita inicializar o valor que vai entrar
-            static void MetodoComRef(ref int paramx)
+            static void MetodoComRef(ref int paramX)
             {
-                paramx += 1;
+                paramX += 1;
             }
 
-            // Não necessita inicializar o valor que vai entrar, mas é necessario definir um valor dentro do metodo
-            static void MetodoComOut(out int paramx)
+            // Não necessita inicializar o valor que vai entrar, mas é necessario definir um valor dentro do método
+            static void MetodoComOut(out int paramX)
             {
                 //paramx += 1; Não é permitido
                 // O valor somente pode sair
-                paramx = 0;
+                paramX = 0;
             }
 
             MetodoComRef(ref x);
+            // Mesmo inicializando em 5, vai retornar 0, pois é a saída do parâmetro com out
             MetodoComOut(out y);
 
             Console.WriteLine("Método usando ref obteve a saída {0}", x);

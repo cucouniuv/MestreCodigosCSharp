@@ -7,40 +7,37 @@ namespace Questao8
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("===============================================================================================");
             Console.WriteLine("Faça uma aplicação ler N valores decimais, imprima os valores em ordem crescente e decrescente.");
+            Console.WriteLine("===============================================================================================");
 
             List<decimal> lista = new List<decimal>();
 
             while (true)
             {
-                Console.WriteLine("Digite um valor decimal ou digite Parar:");
-                string valor = Console.ReadLine();
-                if (valor == "Parar")
-                {
+                Console.WriteLine("Digite um valor decimal ou digite exatamente Parar");
+                string valorInformado = Console.ReadLine();
+
+                if (valorInformado == "Parar")
                     break;
-                }
 
-                bool teste = decimal.TryParse(valor, out decimal valordecimal);
+                if (!decimal.TryParse(valorInformado, out decimal valorDecimal))
+                    continue;
 
-                if (!(teste))
-                {
-                    Console.WriteLine("Valor decimal inválido.");
-                }
-
-                lista.Add(valordecimal);
+                lista.Add(valorDecimal);
             }
 
             lista.Sort();
 
             int i;
 
-            Console.WriteLine("Valores em ordem crescente:");
+            Console.WriteLine("Valores em ordem crescente");
             for (i = 0; i < lista.Count; i++)
             {
                 Console.WriteLine(lista[i]);
             }
 
-            Console.WriteLine("Valores em ordem decrescente:");
+            Console.WriteLine("Valores em ordem decrescente");
             for (i = (lista.Count - 1); i >= 0; i--)
             {
                 Console.WriteLine(lista[i]);

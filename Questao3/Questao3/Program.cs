@@ -13,14 +13,14 @@ namespace Questao3
 
         private static void ExibirMultiplosDeTres()
         {
-            int nContador = 1;
+            int contador = 1;
 
-            while (nContador <= 100)
+            while (contador <= 100)
             {
-                if ((nContador % 3) == 0) {
-                    Console.WriteLine(nContador);
+                if ((contador % 3) == 0) {
+                    Console.WriteLine(contador);
                 }
-                nContador++;
+                contador++;
             }
         }
     }

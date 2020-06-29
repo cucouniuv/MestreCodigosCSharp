@@ -7,32 +7,51 @@ namespace Questao4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Faça uma aplicação que receba N alunos com suas respectivas notas. Use foreach para estrutura de repetição.");
+            Console.WriteLine("======================================");
+            Console.Write("Faça uma aplicação que receba N alunos com suas respectivas notas. ");
+            Console.WriteLine("Use foreach para estrutura de repetição.");
+            Console.WriteLine("======================================");
+            
 
-            List<Alunos> alunos = new List<Alunos>();
+            List<Alunos> listaAlunos = new List<Alunos>();
 
             while (true)
             {
-                Console.WriteLine("Digite o nome do aluno ou digite Parar:");
-                string nome = Console.ReadLine();
+                Console.WriteLine("Digite o nome do aluno ou digite exatamente Parar");
+                string nome;
+                
+                while ((nome = Console.ReadLine()).Length == 0)
+                    Console.WriteLine("Digite o nome do aluno ou digite exatamente Parar");
+
                 if (nome == "Parar")
-                {
                     break;
-                }
-                Console.WriteLine("Digite a nota 1:");
-                double nota1 = double.Parse(Console.ReadLine());
 
-                Console.WriteLine("Digite a nota 2:");
-                double nota2 = double.Parse(Console.ReadLine());
+                Console.WriteLine("Digite a nota 1. [Entre 0-10]");
+                double nota1;
 
-                alunos.Add(new Alunos(nome, nota1, nota2));
+                while ((!double.TryParse(Console.ReadLine(), out nota1)) || ((nota1 < 0) || nota1 > 10))
+                    Console.WriteLine("Digite a nota 1. [Entre 0-10]");
+
+                Console.WriteLine("Digite a nota 2. [Entre 0-10]");
+                double nota2;
+
+                while ((!double.TryParse(Console.ReadLine(), out nota2)) || ((nota2 < 0) || nota2 > 10))
+                    Console.WriteLine("Digite a nota 2. [Entre 0-10]");
+
+                listaAlunos.Add(new Alunos(nome, nota1, nota2));
             }
 
-            foreach (Alunos aluno in alunos)
+            Console.WriteLine("======================================");
+            Console.WriteLine("Alunos com média superior ou igual a 7");
+            Console.WriteLine("======================================");
+
+            foreach (Alunos aluno in listaAlunos)
             {
                 if (aluno.Media >= 7)
                     Console.WriteLine("Nome: {0} - Média: {1}", aluno.Nome, aluno.Media);
             }
+
+            Console.WriteLine("======================================");
         }
     }
 
@@ -42,7 +61,7 @@ namespace Questao4
         public double Nota1 { get; set; }
         public double Nota2 { get; set; }
         public double Media
-    {
+        {
             get => PegarMedia();
         }
 

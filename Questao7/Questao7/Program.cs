@@ -7,18 +7,27 @@ namespace Questao7
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("================================================================================");
             Console.WriteLine("Faça uma aplicação ler 4 números inteiros e calcular a soma dos que forem pares.");
-            Console.WriteLine("Digite o primeiro valor:");
-            int v1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("================================================================================");
 
-            Console.WriteLine("Digite o segundo valor:");
-            int v2 = int.Parse(Console.ReadLine());
+            int v1, v2, v3, v4;
 
-            Console.WriteLine("Digite o terceiro valor:");
-            int v3 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o primeiro valor");
+            while (!int.TryParse(Console.ReadLine(), out v1))
+                Console.WriteLine("Digite o primeiro valor");
 
-            Console.WriteLine("Digite o quarto valor:");
-            int v4 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o segundo valor");           
+            while (!int.TryParse(Console.ReadLine(), out v2))
+                Console.WriteLine("Digite o segundo valor");
+
+            Console.WriteLine("Digite o terceiro valor");            
+            while (!int.TryParse(Console.ReadLine(), out v3))
+                Console.WriteLine("Digite o terceiro valor");
+
+            Console.WriteLine("Digite o quarto valor");            
+            while (!int.TryParse(Console.ReadLine(), out v4))
+                Console.WriteLine("Digite o quarto valor");
 
             List<int> lista = new List<int> { v1, v2, v3, v4};
 

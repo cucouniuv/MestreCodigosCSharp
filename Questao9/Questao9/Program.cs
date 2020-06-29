@@ -10,12 +10,16 @@ namespace Questao9
         {
             List<int> listaInteiros = new List<int>() { 1, 5, 2, 3, 9, 7, 20, 18};
 
-            // Imprimir todos os números da lista.
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Imprimir todos os números da lista.");
+            Console.WriteLine("===================================");
             listaInteiros.ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Imprimir todos os números da lista na ordem crescente.
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Imprimir todos os números da lista na ordem crescente.");
+            Console.WriteLine("===================================");
             IEnumerable<int> ordemCrescente =
                 from valor in listaInteiros
                 orderby valor ascending
@@ -23,8 +27,10 @@ namespace Questao9
 
             ordemCrescente.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Imprimir todos os números da lista na ordem decrescente.
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Imprimir todos os números da lista na ordem decrescente.");
+            Console.WriteLine("===================================");
             IEnumerable<int> ordemDecrescente =
                 from valor in listaInteiros
                 orderby valor descending
@@ -32,8 +38,10 @@ namespace Questao9
 
             ordemDecrescente.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Imprima apenas o primeiro número da lista
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Imprima apenas o primeiro número da lista.");
+            Console.WriteLine("===================================");
             var primeiroRegistro =
                 (from valor in listaInteiros
                 select valor)
@@ -41,8 +49,10 @@ namespace Questao9
 
             Console.WriteLine(primeiroRegistro.ToString());
 
-            //Imprima apenas o ultimo número da lista
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Imprima apenas o ultimo número da lista.");
+            Console.WriteLine("===================================");
             var ultimoRegistro =
                 (from valor in listaInteiros
                  select valor)
@@ -50,37 +60,49 @@ namespace Questao9
 
             Console.WriteLine(ultimoRegistro.ToString());
 
-            //Insira um numero no inicio da lista.
-            Console.WriteLine("Insira um número no início da lista.");
-            listaInteiros.Insert(0, 99);
-            listaInteiros.ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Insira um numero no final da lista.
+            Console.WriteLine("===================================");
+            Console.WriteLine("Insira um número no início da lista.");
+            Console.WriteLine("===================================");
+            var inicioLista = listaInteiros.ToList();
+            inicioLista.Insert(0, 99);
+            inicioLista.ForEach(x => { Console.WriteLine(x.ToString()); });
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Insira um numero no final da lista.");
-            var finalLista = listaInteiros;
+            Console.WriteLine("===================================");
+            var finalLista = listaInteiros.ToList();
             finalLista.Add(88);
             finalLista.ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Remova o primeiro número.
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Remova o primeiro número.");
+            Console.WriteLine("===================================");
             var removaPrimeiro = listaInteiros.Skip(1).ToList();
             removaPrimeiro.ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Remova o ultimo número.
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Remova o último número.");
+            Console.WriteLine("===================================");
             var removaUltimo = listaInteiros.Take(listaInteiros.Count() - 1).ToList();
             removaUltimo.ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Retorne apenas os número pares.
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Retorne apenas os número pares.");
+            Console.WriteLine("===================================");
             var numerosPares =
                 (from valor in listaInteiros
                 where (valor % 2) == 0
                 select valor);
             numerosPares.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Retorne apenas o número informado.
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Retorne apenas o número informado.");
+            Console.WriteLine("===================================");
             int numeroInformado = 20;
             var listaNumeroInformado =
                 (from valor in listaInteiros
@@ -88,8 +110,10 @@ namespace Questao9
                  select valor);
             listaNumeroInformado.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
 
-            //Transforme todos os números da lista em um array.
+
+            Console.WriteLine("===================================");
             Console.WriteLine("Transforme todos os números da lista em um array.");
+            Console.WriteLine("===================================");
             foreach (int valor in listaInteiros.ToArray())
             {
                 Console.WriteLine(valor);
