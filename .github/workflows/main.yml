@@ -27,7 +27,7 @@ jobs:
     
     - name: Restore
       run: dotnet restore
-      working-directory: ./Questao1
+      working-directory: ./
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
