@@ -26,7 +26,9 @@ Classes abstratas e interfaces podem ser utilizadas em situações que várias c
 A principal diferença entre classes abstratas e interfaces é que uma classe poderia implementar diversas interfaces, já com a abstração, ela poderia ser implementada somente de uma.
 
 == O que faz as interfaces IDisposable, IComparable, ICloneable e IEnumerable? ==
-IDisposable destina-se principalmente a liberar recursos não gerenciados utilizados em nosso código.
+
+IDisposable destina-se principalmente a liberar recursos não gerenciados utilizados em nosso código, tais como conexões com banco de dados, arquivos e hardwares externos. Estes devem ser liberados manualmente.
+
 https://docs.microsoft.com/pt-br/dotnet/standard/garbage-collection/implementing-dispose
 
 IComparable
