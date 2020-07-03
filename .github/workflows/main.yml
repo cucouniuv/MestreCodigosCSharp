@@ -31,8 +31,8 @@ jobs:
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
-      working-directory: ./Questao1
+      working-directory: ./
 
     - name: dotnet publish
       run: dotnet publish --configuration Release -o netcore
-      working-directory: ./Questao1
+      working-directory: ./
