@@ -21,15 +21,14 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    
+    - name: .NET Core
+      uses: actions/setup-dotnet@v1
+    
+    - name: Restore
+      run: dotnet restore
+      working-directory: ./Questao1
 
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
-
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
-
-    - name: Restore NuGet
-      run: nuget restore Questao1/Questao1.sln
-      
-    - name: Build solution
-      run: msbuild Questao1/Questao1.sln
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+      working-directory: ./Questao1
