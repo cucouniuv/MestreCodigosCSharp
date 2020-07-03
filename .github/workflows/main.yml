@@ -25,14 +25,28 @@ jobs:
     - name: .NET Core
       uses: actions/setup-dotnet@v1
     
-    - name: Restore
+    # Questao1
+    - name: Restore Questao1
       run: dotnet restore
-      working-directory: ./
+      working-directory: ./Questao1
 
-    - name: Build with dotnet
+    - name: Build Questao1
       run: dotnet build --configuration Release
-      working-directory: ./
+      working-directory: ./Questao1
 
-    - name: dotnet publish
+    - name: Publish Questao1
       run: dotnet publish --configuration Release -o netcore
-      working-directory: ./
+      working-directory: ./Questao1
+
+    # Questao2
+    - name: Restore Questao2
+      run: dotnet restore
+      working-directory: ./Questao2
+
+    - name: Build Questao2
+      run: dotnet build --configuration Release
+      working-directory: ./Questao2
+
+    - name: Publish Questao2
+      run: dotnet publish --configuration Release -o netcore
+      working-directory: ./Questao2
