@@ -1,5 +1,15 @@
 # Mestre dos Códigos - Trilha C# - Escudeiro
 
+Roteiro de execução
+
+Faça um clone do repositório https://github.com/cucouniuv/MestreCodigosCSharp.git
+Abra no Visual Studio a Solução "Resolucao" que fica na pasta "Resolucao"
+No Visual Studio, vá no menu "Compilação > Compilar Solução"
+No menu "Gerenciador de Soluções", no projeto de sua escolha, aperte com o botão direito do mouse e escolha a opção "Definir como projeto de inicialização".
+Com o projeto definido, vá no menu "Depurar > Iniciar sem depurar"
+
+Para executar os projetos de testes, na mesma Solução "Resolucao", é possível executar eles pelo menu "Teste > Executar todos os testes", ou abrindo o "Gerenciador de Testes" disponível no menu "Exibir > Gerenciador de Testes".
+
 Perguntas teóricas de introdução
 
     1. Em quais linguagens o C# foi inspirado?
