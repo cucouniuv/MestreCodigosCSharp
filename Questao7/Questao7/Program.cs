@@ -38,6 +38,7 @@ namespace Questao7
                     soma += x;
             }
 
+            Console.WriteLine("");
             Console.WriteLine("Valor da soma: {0}", soma.ToString());
         }
     }

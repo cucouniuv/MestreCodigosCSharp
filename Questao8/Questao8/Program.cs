@@ -27,6 +27,12 @@ namespace Questao8
                 lista.Add(valorDecimal);
             }
 
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("Não há valores para exibir");
+                return;
+            }
+
             lista.Sort();
 
             int i;
@@ -36,6 +42,8 @@ namespace Questao8
             {
                 Console.WriteLine(lista[i]);
             }
+
+            Console.WriteLine("");
 
             Console.WriteLine("Valores em ordem decrescente");
             for (i = (lista.Count - 1); i >= 0; i--)

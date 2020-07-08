@@ -45,12 +45,18 @@ namespace Questao4
             Console.WriteLine("Alunos com média superior ou igual a 7");
             Console.WriteLine("======================================");
 
-            foreach (Alunos aluno in listaAlunos)
+            if (listaAlunos.Count == 0)
             {
-                if (aluno.Media >= 7)
-                    Console.WriteLine("Nome: {0} - Média: {1}", aluno.Nome, aluno.Media);
+                Console.WriteLine("Nenhum aluno atingiu a média");
             }
-
+            else
+            {
+                foreach (Alunos aluno in listaAlunos)
+                {
+                    if (aluno.Media >= 7)
+                        Console.WriteLine("Nome: {0} - Média: {1}", aluno.Nome, aluno.Media);
+                }
+            }
             Console.WriteLine("======================================");
         }
     }

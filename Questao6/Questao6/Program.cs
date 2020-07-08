@@ -10,6 +10,8 @@ namespace Questao6
             Console.WriteLine("Crie uma aplicação, que demonstre a diferença entre REF e OUT.");
             Console.WriteLine("==============================================================");
 
+            Console.WriteLine("As variáveis x e y serão inicializadas com valor 5");
+
             int x = 5;
             int y = 5;
 

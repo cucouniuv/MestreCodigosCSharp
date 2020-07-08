@@ -58,8 +58,8 @@ namespace Questao2
                 }
             }
 
-            Console.WriteLine("Maior Salário {0}: {1}", maiorSalario.ToString(), nomeMaiorSalario);
-            Console.WriteLine("Menor Salário {0}: {1}", menorSalario.ToString(), nomeMenorSalario);
+            Console.WriteLine("Maior Salário {0} - Funcionário {1}", maiorSalario.ToString("N2"), nomeMaiorSalario);
+            Console.WriteLine("Menor Salário {0} - Funcionário {1}", menorSalario.ToString("N2"), nomeMenorSalario);
         }
 
         class Funcionario
