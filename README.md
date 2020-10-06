@@ -40,6 +40,8 @@ Perguntas teóricas de introdução
 
 * Imprima todos os resultados no console, de forma que o usuário escolha a ação desejada.
 
+***
+
 2. Crie uma aplicação que receba nome e salario de N funcionários. Utilize a repetição for e while.
 
 * Imprima o maior salario
