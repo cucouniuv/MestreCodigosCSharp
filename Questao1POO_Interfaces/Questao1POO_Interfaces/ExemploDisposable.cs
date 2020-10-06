@@ -1,30 +1,33 @@
-﻿using Microsoft.Win32.SafeHandles;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Timers;
 
 namespace Questao1POO_Interfaces
 {
     class Coisa: IDisposable
     {
-        private Timer _timer = new Timer();
-        private StreamWriter _stream;
+        private readonly Timer _timer = new Timer();
+        private readonly StreamWriter _stream;
 
         public Coisa()
         {
             _timer.Interval = 2000;
-            _stream = new StreamWriter(@"C:\teste\arquivo.txt");
-            _stream.WriteLine("primeira linha");
-            _stream.WriteLine("segunda linha");
-            _stream.WriteLine("terceira linha");
+
+            string diretorio = @"C:\questao_dispose";
+
+            if (!Directory.Exists(diretorio))
+                Directory.CreateDirectory(diretorio);
+
+            _stream = new StreamWriter(diretorio + @"\arquivo.txt");
+            _stream.WriteLine("Primeira linha");
+            _stream.WriteLine("Segunda linha");
+            _stream.WriteLine("Terceira linha");
         }
 
         public void Dispose()
         {
             _timer.Dispose();
+            _stream.WriteLine("Realizando dispose");
             _stream.Dispose();
         }
     }

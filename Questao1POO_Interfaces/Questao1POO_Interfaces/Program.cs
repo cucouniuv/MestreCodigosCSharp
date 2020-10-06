@@ -115,7 +115,14 @@ namespace Questao1POO_Interfaces
             Console.WriteLine("=======================");
 
             Coisa coisa = new Coisa();
-            Console.WriteLine("Criado objeto Coisa e após o seu uso é chamado o Dispose para liberar o objeto Timer.");
+            try
+            {
+                Console.WriteLine("Criado objeto Coisa e após o seu uso é chamado o Dispose para liberar os objetos Timer e Stream.");
+            }
+            finally
+            {
+                coisa.Dispose();
+            }            
         }
     }
 }
