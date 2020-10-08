@@ -23,12 +23,14 @@ namespace Questao5
 
         public double CalcularValorX1()
         {
-            return Math.Truncate((-B + Math.Sqrt(Delta)) / (2 * A));
+            double valor = (-B + Math.Sqrt(Delta)) / (2 * A);
+            return Math.Truncate(100 * valor) / 100;
         }
 
         public double CalcularValorX2()
         {
-            return Math.Truncate((-B - Math.Sqrt(Delta)) / (2 * A));
+            double valor = (-B - Math.Sqrt(Delta)) / (2 * A);
+            return Math.Truncate(100 * valor) / 100;
         }
 
     }

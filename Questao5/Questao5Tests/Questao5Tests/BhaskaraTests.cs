@@ -7,7 +7,7 @@ namespace Questao5Tests
     {
         [Theory]
         [InlineData(3, -15, 12, 4, 1)]
-        [InlineData(9, -24, 16, 1, 1)]
+        [InlineData(9, -24, 16, 1.33, 1.33)]
         public void CalcularValorDeX1EDeX2DaBhaskara(int a, int b, int c, double x1Esperado, double x2Esperado)
         {
             Bhaskara bhaskara = new Bhaskara(a, b, c);
