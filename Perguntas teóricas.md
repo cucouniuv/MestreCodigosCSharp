@@ -91,6 +91,7 @@ NUnit: Framework mais utilizado entre os Devs .NET.
 XUnit: Framework mais recente, nascido para simplificar e modernizar a forma de escrever testes unitários.
 
 Referências:
+
 https://www.eduardopires.net.br/2017/07/ferramentas-para-escrever-testes-de-unidade-mais-eficientes/
 
 https://xunit.github.io/docs/comparisons.html
