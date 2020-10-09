@@ -8,117 +8,173 @@ namespace Questao9
     {
         static void Main(string[] args)
         {
-            List<int> listaInteiros = new List<int>() { 1, 5, 2, 3, 9, 7, 20, 18};
+            List<int> listaInteiros = new List<int>();
 
+            const string frase = "Digite um número inteiro ou digite exatamente: Parar";
 
-            Console.WriteLine("===================================");
-            Console.WriteLine("Imprimir todos os números da lista.");
-            Console.WriteLine("===================================");
-            listaInteiros.ForEach(x => { Console.WriteLine(x.ToString()); });
+            while (true)
+            {
+                Console.WriteLine(frase);
 
+                string valorDigitado;
+                int valorInteiro;
 
-            Console.WriteLine("===================================");
-            Console.WriteLine("Imprimir todos os números da lista na ordem crescente.");
-            Console.WriteLine("===================================");
-            IEnumerable<int> ordemCrescente =
-                from valor in listaInteiros
-                orderby valor ascending
-                select valor;
+                while
+                    (
+                        ((valorDigitado = Console.ReadLine()).Length == 0) ||
+                        ((!int.TryParse(valorDigitado, out valorInteiro)) && (valorDigitado != "Parar"))
+                    )
+                    Console.WriteLine("Valor inválido. " + frase);
 
-            ordemCrescente.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
+                if (valorDigitado == "Parar")
+                    break;
 
+                listaInteiros.Add(valorInteiro);
+            }
 
-            Console.WriteLine("===================================");
-            Console.WriteLine("Imprimir todos os números da lista na ordem decrescente.");
-            Console.WriteLine("===================================");
-            IEnumerable<int> ordemDecrescente =
-                from valor in listaInteiros
-                orderby valor descending
-                select valor;
+            ExibirTituloNoConsole("Imprimir todos os números da lista.");
+            ExibirTodosOsNumerosDaLista(listaInteiros);
+            Console.WriteLine(String.Empty);
 
-            ordemDecrescente.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
+            ExibirTituloNoConsole("Imprimir todos os números da lista na ordem crescente.");
+            ExibirTodosOsNumerosDaListaEmOrdemCrescente(listaInteiros);
+            Console.WriteLine(String.Empty);
 
+            ExibirTituloNoConsole("Imprimir todos os números da lista na ordem decrescente.");
+            ExibirTodosOsNumerosDaListaEmOrdemDescrescente(listaInteiros);
+            Console.WriteLine(String.Empty);
 
-            Console.WriteLine("===================================");
-            Console.WriteLine("Imprima apenas o primeiro número da lista.");
-            Console.WriteLine("===================================");
-            var primeiroRegistro =
-                (from valor in listaInteiros
-                select valor)
-                .First();
+            ExibirTituloNoConsole("Imprima apenas o primeiro número da lista.");
+            ExibirApenasOPrimeiroNumeroDaLista(listaInteiros);
+            Console.WriteLine(String.Empty);
 
-            Console.WriteLine(primeiroRegistro.ToString());
+            ExibirTituloNoConsole("Imprima apenas o ultimo número da lista.");
+            ExibirApenasOUltimoNumeroDaLista(listaInteiros);
+            Console.WriteLine(String.Empty);
 
+            ExibirTituloNoConsole("Insira um número no início da lista.");
+            ExibirListaComNumeroInseridoNoInicio(listaInteiros);
+            Console.WriteLine(String.Empty);
 
-            Console.WriteLine("===================================");
-            Console.WriteLine("Imprima apenas o ultimo número da lista.");
-            Console.WriteLine("===================================");
-            var ultimoRegistro =
-                (from valor in listaInteiros
-                 select valor)
-                .Last();
+            ExibirTituloNoConsole("Insira um número no final da lista.");
+            ExibirListaComNumeroInseridoNoFinal(listaInteiros);
+            Console.WriteLine(String.Empty);
 
-            Console.WriteLine(ultimoRegistro.ToString());
+            ExibirTituloNoConsole("Remova o primeiro número.");
+            ExibirListaRemovendoOPrimeiroNumero(listaInteiros);
+            Console.WriteLine(String.Empty);
 
+            ExibirTituloNoConsole("Remova o último número.");
+            ExibirListaRemovendoOUltimoNumero(listaInteiros);
+            Console.WriteLine(String.Empty);
 
-            Console.WriteLine("===================================");
-            Console.WriteLine("Insira um número no início da lista.");
-            Console.WriteLine("===================================");
-            var inicioLista = listaInteiros.ToList();
-            inicioLista.Insert(0, 99);
-            inicioLista.ForEach(x => { Console.WriteLine(x.ToString()); });
+            ExibirTituloNoConsole("Retorne apenas os número pares.");
+            ExibirApenasOsNumerosParesDaLista(listaInteiros);
+            Console.WriteLine(String.Empty);
 
-            Console.WriteLine("===================================");
-            Console.WriteLine("Insira um numero no final da lista.");
-            Console.WriteLine("===================================");
-            var finalLista = listaInteiros.ToList();
-            finalLista.Add(88);
-            finalLista.ForEach(x => { Console.WriteLine(x.ToString()); });
+            ExibirTituloNoConsole("Retorne apenas o número informado.");
+            ExibirApenasONumeroInformadoDaLista(listaInteiros);
+            Console.WriteLine(String.Empty);
 
+            ExibirTituloNoConsole("Transforme todos os números da lista em um array.");
+            ExibirTodosOsNumerosDaListaEmArray(listaInteiros);
 
-            Console.WriteLine("===================================");
-            Console.WriteLine("Remova o primeiro número.");
-            Console.WriteLine("===================================");
-            var removaPrimeiro = listaInteiros.Skip(1).ToList();
-            removaPrimeiro.ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
 
-
-            Console.WriteLine("===================================");
-            Console.WriteLine("Remova o último número.");
-            Console.WriteLine("===================================");
-            var removaUltimo = listaInteiros.Take(listaInteiros.Count() - 1).ToList();
-            removaUltimo.ForEach(x => { Console.WriteLine(x.ToString()); });
-
-
-            Console.WriteLine("===================================");
-            Console.WriteLine("Retorne apenas os número pares.");
-            Console.WriteLine("===================================");
-            var numerosPares =
-                (from valor in listaInteiros
-                where (valor % 2) == 0
-                select valor);
-            numerosPares.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
-
-
-            Console.WriteLine("===================================");
-            Console.WriteLine("Retorne apenas o número informado.");
-            Console.WriteLine("===================================");
-            int numeroInformado = 20;
-            var listaNumeroInformado =
-                (from valor in listaInteiros
-                 where valor == numeroInformado
-                 select valor);
-            listaNumeroInformado.ToList().ForEach(x => { Console.WriteLine(x.ToString()); });
-
-
-            Console.WriteLine("===================================");
-            Console.WriteLine("Transforme todos os números da lista em um array.");
-            Console.WriteLine("===================================");
+        private static void ExibirTodosOsNumerosDaListaEmArray(List<int> listaInteiros)
+        {
             foreach (int valor in listaInteiros.ToArray())
             {
                 Console.WriteLine(valor);
             }
+        }
 
+        private static void ExibirApenasONumeroInformadoDaLista(List<int> listaInteiros)
+        {
+            int valorInformado;
+            while (!int.TryParse(Console.ReadLine(), out valorInformado))
+                Console.WriteLine("Valor inválido. Digite um número inteiro");
+
+            Console.WriteLine(String.Empty);
+            listaInteiros.Where(x => x == valorInformado).ToList()
+                .ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirApenasOsNumerosParesDaLista(List<int> listaInteiros)
+        {
+            listaInteiros.Where(x => ((x % 2) == 0)).ToList()
+                .ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirListaRemovendoOUltimoNumero(List<int> listaInteiros)
+        {
+            listaInteiros.RemoveAt(listaInteiros.Count - 1);
+            listaInteiros.ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirListaRemovendoOPrimeiroNumero(List<int> listaInteiros)
+        {
+            listaInteiros.RemoveAt(0);
+            listaInteiros.ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirListaComNumeroInseridoNoFinal(List<int> listaInteiros)
+        {
+            int valorFim;
+            while (!int.TryParse(Console.ReadLine(), out valorFim))
+                Console.WriteLine("Valor inválido. Digite um número inteiro");
+
+            listaInteiros.Add(valorFim);
+
+            Console.WriteLine(String.Empty);
+            listaInteiros.ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirListaComNumeroInseridoNoInicio(List<int> listaInteiros)
+        {
+            Console.WriteLine("Digite um número inteiro");
+            int valorInicio;
+            while (!int.TryParse(Console.ReadLine(), out valorInicio))
+                Console.WriteLine("Valor inválido. Digite um número inteiro");
+
+            listaInteiros.Insert(0, valorInicio);
+
+            Console.WriteLine(String.Empty);
+            listaInteiros.ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirApenasOUltimoNumeroDaLista(List<int> listaInteiros)
+        {
+            Console.WriteLine(listaInteiros.Last().ToString());
+        }
+
+        private static void ExibirApenasOPrimeiroNumeroDaLista(List<int> listaInteiros)
+        {
+            Console.WriteLine(listaInteiros.First().ToString());
+        }
+
+        private static void ExibirTodosOsNumerosDaListaEmOrdemDescrescente(List<int> listaInteiros)
+        {
+            listaInteiros.OrderByDescending(x => x).ToList()
+                .ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirTodosOsNumerosDaListaEmOrdemCrescente(List<int> listaInteiros)
+        {
+            listaInteiros.OrderBy(x => x).ToList()
+                .ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirTodosOsNumerosDaLista(List<int> listaInteiros)
+        {
+            listaInteiros.ForEach(x => { Console.WriteLine(x.ToString()); });
+        }
+
+        private static void ExibirTituloNoConsole(string titulo)
+        {
+            Console.WriteLine("===================================");
+            Console.WriteLine(titulo);
+            Console.WriteLine("===================================");
         }
     }
 }

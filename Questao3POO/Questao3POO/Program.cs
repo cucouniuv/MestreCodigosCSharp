@@ -39,8 +39,11 @@ namespace Questao3POO
             {
                 contaCorrente.NumeroConta = 50259;
                 contaCorrente.Depositar(100.23);
-                contaCorrente.Sacar(50);
 
+                contaCorrente.Sacar(50);
+                Console.WriteLine(contaCorrente.MostrarDados());
+
+                contaCorrente.Sacar(200);
                 Console.WriteLine(contaCorrente.MostrarDados());
             }
             catch (Exception e)

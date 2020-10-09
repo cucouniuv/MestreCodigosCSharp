@@ -22,7 +22,10 @@ namespace Questao8
                     break;
 
                 if (!decimal.TryParse(valorInformado, out decimal valorDecimal))
+                {
+                    Console.WriteLine("Valor inválido.");
                     continue;
+                }
 
                 lista.Add(valorDecimal);
             }

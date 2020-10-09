@@ -4,13 +4,6 @@ namespace Questao1
 {
     class Program
     {
-        public static double nResultadoAdicao;
-        public static double nResultadoSubtracao;
-        public static double nResultadoDivisao;
-        public static double nResultadoMultiplicacao;
-        public static string sAEhParOuImpar;
-        public static string sBEhParOuImpar;
-
         static void Main(string[] args)
         {
             Console.WriteLine("Crie uma aplicação, que receba os valores A e B. Mostre de forma simples, como utilizar variáveis e manipular dados");            
@@ -36,26 +29,12 @@ namespace Questao1
 
         private static void ProcessarValores(double nValorA, double nValorB)
         {
-            Program.nResultadoAdicao = nValorA + nValorB;
-            Program.nResultadoSubtracao = nValorA - nValorB;
-            Program.nResultadoDivisao = nValorB / nValorA;
-            Program.nResultadoMultiplicacao = nValorA * nValorB;
+            Processador processador = new Processador(nValorA, nValorB);
 
-            bool bValorAEhPar = (nValorA % 2 == 0);
-            bool bValorBEhPar = (nValorB % 2 == 0);
-
-            Program.sAEhParOuImpar = "ímpar";
-            Program.sBEhParOuImpar = "ímpar";
-
-            if (bValorAEhPar)
-                sAEhParOuImpar = "par";
-            if (bValorBEhPar)
-                sBEhParOuImpar = "par";
-
-            ExibirNoConsole();
+            ExibirNoConsole(processador);
         }
 
-        private static void ExibirNoConsole()
+        private static void ExibirNoConsole(Processador p)
         {
             Console.WriteLine("==========================================");
             Console.WriteLine("==            Menu de opções            ==");
@@ -76,38 +55,38 @@ namespace Questao1
             switch (sValorEscolhido)
             {
                 case "1":
-                    Console.WriteLine("Opção 1 - Resultado: " + Program.nResultadoAdicao);
+                    Console.WriteLine("Opção 1 - Resultado: " + p.Adicao());
                     Console.WriteLine("");
-                    ExibirNoConsole();
+                    ExibirNoConsole(p);
                     break;
                 case "2":
-                    Console.WriteLine("Opção 2 - Resultado: " + Program.nResultadoSubtracao);
+                    Console.WriteLine("Opção 2 - Resultado: " + p.Subtracao());
                     Console.WriteLine("");
-                    ExibirNoConsole();
+                    ExibirNoConsole(p);
                     break;
                 case "3":
-                    Console.WriteLine("Opção 3 - Resultado: " + Program.nResultadoDivisao);
+                    Console.WriteLine("Opção 3 - Resultado: " + p.Divisao());
                     Console.WriteLine("");
-                    ExibirNoConsole();
+                    ExibirNoConsole(p);
                     break;
                 case "4":
-                    Console.WriteLine("Opção 4 - Resultado: " + Program.nResultadoMultiplicacao);
+                    Console.WriteLine("Opção 4 - Resultado: " + p.Multiplicacao());
                     Console.WriteLine("");
-                    ExibirNoConsole();
+                    ExibirNoConsole(p);
                     break;
                 case "5":
-                    Console.WriteLine("Opção 5 - Resultado: A é " + Program.sAEhParOuImpar + " e B é " + Program.sBEhParOuImpar);
+                    Console.WriteLine("Opção 5 - Resultado: A é " + p.ValorAEhParOuImpar + " e B é " + p.ValorBEhParOuImpar);
                     Console.WriteLine("");
-                    ExibirNoConsole();
+                    ExibirNoConsole(p);
                     break;
                 case "6":
-                    Console.WriteLine("Opção 1 - Resultado: " + Program.nResultadoAdicao);
-                    Console.WriteLine("Opção 2 - Resultado: " + Program.nResultadoSubtracao);
-                    Console.WriteLine("Opção 3 - Resultado: " + Program.nResultadoDivisao);
-                    Console.WriteLine("Opção 4 - Resultado: " + Program.nResultadoMultiplicacao);
-                    Console.WriteLine("Opção 5 - Resultado: A é " + Program.sAEhParOuImpar + " e B é " + Program.sBEhParOuImpar);
+                    Console.WriteLine("Opção 1 - Resultado: " + p.Adicao());
+                    Console.WriteLine("Opção 2 - Resultado: " + p.Subtracao());
+                    Console.WriteLine("Opção 3 - Resultado: " + p.Divisao());
+                    Console.WriteLine("Opção 4 - Resultado: " + p.Multiplicacao());
+                    Console.WriteLine("Opção 5 - Resultado: A é " + p.ValorAEhParOuImpar + " e B é " + p.ValorBEhParOuImpar);
                     Console.WriteLine("");
-                    ExibirNoConsole();
+                    ExibirNoConsole(p);
                     break;
                 case "7":
                     Console.Clear();
@@ -119,7 +98,7 @@ namespace Questao1
                 default:
                     Console.WriteLine("Opção não disponível. Tente Novamente.");
                     Console.WriteLine("");
-                    ExibirNoConsole();
+                    ExibirNoConsole(p);
                     break;
             }
         }
