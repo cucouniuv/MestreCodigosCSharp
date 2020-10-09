@@ -16,6 +16,8 @@
 
 Para executar os projetos de testes, na mesma Solução "Resolucao" é possível executar eles pelo menu "Teste > Executar todos os testes", ou abrindo o "Gerenciador de Testes" disponível no menu "Exibir > Gerenciador de Testes".
 
+As respostas para as perguntas teóricas estão [aqui](https://github.com/cucouniuv/MestreCodigosCSharp/blob/master/Perguntas%20te%C3%B3ricas.md)
+
 ### Perguntas teóricas de introdução
 
 1. Em quais linguagens o C# foi inspirado?
