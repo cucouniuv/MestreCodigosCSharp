@@ -4,19 +4,11 @@
 
 1. Faça um clone do repositório https://github.com/cucouniuv/MestreCodigosCSharp.git
 
-***
-
 2. Abra no Visual Studio a Solução "Resolucao" que fica na pasta "Resolucao"
-
-***
 
 3. No Visual Studio, vá no menu "Compilação > Compilar Solução"
 
-***
-
 4. No menu "Gerenciador de Soluções", no projeto de sua escolha, aperte com o botão direito do mouse e escolha a opção "Definir como projeto de inicialização".
-
-***
 
 5. Com o projeto definido, vá no menu "Depurar > Iniciar sem depurar"
 
@@ -198,6 +190,6 @@ Para executar os projetos de testes, na mesma Solução "Resolucao" é possível
 
 2. Escolha dois frameworks e faça testes unitários para pelo menos dois exercícios em cada framework.
 
-## BONUS
+## Bônus
 
 * Utilizando qualquer exercício, execute-o no Linux.
