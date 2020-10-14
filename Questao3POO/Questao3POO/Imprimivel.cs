@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Questao3POO
+﻿namespace Questao3POO
 {
     public interface IImprimivel
     {

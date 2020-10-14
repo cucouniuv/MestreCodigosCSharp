@@ -31,7 +31,7 @@ POO significa Programação Orientada a Objetos
 Polimorfismo se trata de que um objeto pode se comportar como se fosse outro objeto. Por exemplo:
 Um objeto `Peixe` é um `Animal`, herda todas as propriedades e métodos da classe base, mas o objeto `Animal` não pode ser tratado como `Peixe`, pois ele não possui todas as características de `Peixe`.
 
-Além disso, através de classes abstratas podemos manipular classes derivadas sem se importar com suas especificidades.
+Além disso, através de classes abstratas ou interfaces podemos manipular classes/interfaces derivadas sem se importar com suas especificidades.
 
 > O que é abstração?
 
@@ -61,7 +61,7 @@ Classes abstratas e interfaces podem ser utilizadas em situações que várias c
 A principal diferença entre classes abstratas e interfaces é que uma classe poderia implementar diversas interfaces, já com a abstração, ela poderia ser implementada somente de uma.
 
 Além disso, interfaces só definem contratos, não comportamentos.
-Já com a abstração podemos definir os comportamentos em comum das classes derivadas.
+Já com uma classe abstrata podemos definir os comportamentos em comum das classes derivadas.
 
 > O que faz as interfaces IDisposable, IComparable, ICloneable e IEnumerable?
 

@@ -13,8 +13,8 @@ namespace Questao3POO
 
         public string MostrarDados()
         {
-            string dados = "Conta Corrente: " + NumeroConta;
-            dados += " possui Saldo: " + Saldo;
+            string dados = "Conta Corrente " + NumeroConta;
+            dados += " possui Saldo: " + Saldo.ToString("N2");
 
             return dados;
         }
@@ -22,7 +22,7 @@ namespace Questao3POO
         public override void Sacar(double valor)
         {
             if ((Saldo - valor) < 0)
-                throw new Exception("Conta " + NumeroConta + " possui saldo insuficiente para realizar este saque.");
+                throw new InvalidOperationException("Conta Corrente " + NumeroConta + " possui saldo insuficiente para realizar este saque.");
 
             Saldo -= valor - TaxaOperacao;
         }
