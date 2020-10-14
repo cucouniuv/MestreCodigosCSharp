@@ -2,7 +2,7 @@
 
 ### Roteiro de execução
 
-1. Faça um clone do repositório https://github.com/cucouniuv/MestreCodigosCSharp.git
+1. Faça um clone do repositório https://github.com/luis-olivetti/MestreCodigosCSharp.git
 
 2. Abra no Visual Studio a Solução "Resolucao" que fica na pasta "Resolucao"
 
