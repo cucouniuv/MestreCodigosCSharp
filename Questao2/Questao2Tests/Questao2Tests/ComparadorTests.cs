@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Questao2Tests
 {
-    public class FuncionarioTests
+    public class ComparadorTests
     {
         [Fact]
         public void VerificarFuncionarioComMaiorSalario()
@@ -22,7 +22,7 @@ namespace Questao2Tests
             };
 
             // Act
-            Funcionario.DefinirFuncionarioComMaiorEMenorSalarioDeUmaLista(listaFuncionario,
+            ComparadorFuncionario.DefinirFuncionarioComMaiorEMenorSalarioDeUmaLista(listaFuncionario,
                 out Funcionario funcionarioMaiorSalario, out _);
 
             // Assert
@@ -45,7 +45,7 @@ namespace Questao2Tests
             };
 
             // Act
-            Funcionario.DefinirFuncionarioComMaiorEMenorSalarioDeUmaLista(listaFuncionario,
+            ComparadorFuncionario.DefinirFuncionarioComMaiorEMenorSalarioDeUmaLista(listaFuncionario,
                 out _, out Funcionario funcionarioMenorSalario);
 
             // Assert

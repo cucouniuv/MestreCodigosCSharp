@@ -8,6 +8,7 @@ namespace Questao2
         static void Main(string[] args)
         {
             Console.WriteLine("Crie uma aplicação que receba nome e salario de N funcionários. Utilize a repetição for e while.");
+            Console.WriteLine(String.Empty);
 
             List<Funcionario> listaFuncionario = new List<Funcionario>();
 
@@ -36,7 +37,7 @@ namespace Questao2
                 return;
             }
 
-            Funcionario.DefinirFuncionarioComMaiorEMenorSalarioDeUmaLista(listaFuncionario,
+            ComparadorFuncionario.DefinirFuncionarioComMaiorEMenorSalarioDeUmaLista(listaFuncionario,
                 out Funcionario funcionarioMaiorSalario, out Funcionario funcionarioMenorSalario);
 
             Console.WriteLine(String.Empty);

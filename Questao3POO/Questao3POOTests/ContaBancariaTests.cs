@@ -67,10 +67,12 @@ namespace Questao3POOTests
             (double valorLimite, double valorDeposito, double valorSaque, double valorEsperado)
         {
             // Arrange
-            ContaEspecial contaEspecial = new ContaEspecial();
+            ContaEspecial contaEspecial = new ContaEspecial
+            {
+                Limite = valorLimite
+            };
 
             // Act
-            contaEspecial.Limite = valorLimite;
             contaEspecial.Depositar(valorDeposito);
             contaEspecial.Sacar(valorSaque);
 
@@ -85,16 +87,18 @@ namespace Questao3POOTests
             (double valorLimite, double valorDeposito, double valorSaque)
         {
             // Arrange
-            ContaEspecial contaEspecial = new ContaEspecial();
+            ContaEspecial contaEspecial = new ContaEspecial
+            {
+                Limite = valorLimite
+            };
 
             // Act
-            contaEspecial.Limite = valorLimite;
             contaEspecial.Depositar(valorDeposito);
             void act() => contaEspecial.Sacar(valorSaque);
 
             // Assert
-            var exception = Assert.Throws<Exception>(act);
-            Assert.Equal("Conta 0 possui saldo insuficiente para realizar este saque.", exception.Message);
+            var exception = Assert.Throws<InvalidOperationException>(act);
+            Assert.Equal("Conta Especial 0 possui saldo insuficiente para realizar este saque.", exception.Message);
         }
     }
 }
